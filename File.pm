@@ -162,7 +162,7 @@ require AutoLoader;
     adjustfilecase
     adjustpathcase
 );
-$VERSION = '1.09';
+$VERSION = '1.10';
 
 
 # Preloaded methods go here.
@@ -300,7 +300,8 @@ sub open {
 	# Strip comments.
 	unless ($self->{commentdelim} eq '') {
 	    my $delim = $self->{commentdelim};
-	    s/\s*$delim.*//;
+	    s/\s*(?<!\\)$delim.*//;
+	    s/\\$delim/$delim/;
 	}
 
 	if (!length) {

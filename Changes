@@ -1,6 +1,12 @@
 Revision history for Perl extension Win32::Registry::File (formerly
 Config::Ini, formerly IniFile).
 
+1.10  Sun Mar 24 05:30:48 2002
+	Now possible for the value part in .ini files to contain
+	the delimiter if it are escaped with backslash, like:
+		password=foo\;bar	; this is a password
+	Patched by Will Lowe <harpo@thebackrow.net>.
+
 1.09  Mon Jan 21 10:57:53 2002
 	Released as Win32::Registry::File.  Only documentation
 	changes.
